@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'netlinksocket.h'
 **
-** Created: Wed Apr 9 19:31:00 2014
+** Created: Thu Apr 10 18:53:22 2014
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.4)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -28,21 +28,19 @@ static const uint qt_meta_data_NetlinkSocket[] = {
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       2,       // signalCount
+       3,       // signalCount
 
  // signals: signature, parameters, type, tag, flags
       15,   14,   14,   14, 0x05,
       30,   26,   14,   14, 0x05,
-
- // slots: signature, parameters, type, tag, flags
-      45,   14,   14,   14, 0x0a,
+      48,   45,   14,   14, 0x05,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_NetlinkSocket[] = {
     "NetlinkSocket\0\0finished()\0err\0"
-    "error(QString)\0process()\0"
+    "error(QString)\0ba\0data(QByteArray)\0"
 };
 
 void NetlinkSocket::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -53,7 +51,7 @@ void NetlinkSocket::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         switch (_id) {
         case 0: _t->finished(); break;
         case 1: _t->error((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 2: _t->process(); break;
+        case 2: _t->data((*reinterpret_cast< QByteArray(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -109,5 +107,12 @@ void NetlinkSocket::error(QString _t1)
 {
     void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 1, _a);
+}
+
+// SIGNAL 2
+void NetlinkSocket::data(QByteArray _t1)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 2, _a);
 }
 QT_END_MOC_NAMESPACE
