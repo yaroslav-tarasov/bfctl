@@ -3,7 +3,8 @@
 #include <netlink/handlers.h>
 #include <QDebug>
 #include <thread>
-
+#include <linux/if_ether.h>
+#include "../test_hook/trx_data.h"
 
 class NetlinkSocketPrivate
 {
@@ -107,13 +108,17 @@ void NetlinkSocket::runListener()
             unsigned char* b =  mBuff.get();
             unsigned char *nl_msg;
 
+            filter_rule_t emsg;
+            memset(&emsg,0,sizeof(filter_rule_t));
+            ret = d->send_simple( MSG_GET_RULES, 0, &emsg, sizeof(filter_rule_t));
+
             if( ret = d->recv (NULL, &nl_msg, NULL))
             {
                 QByteArray ba(reinterpret_cast<const char*>(nl_msg),mBuffSize);
                 struct nlmsghdr * hdr = (struct nlmsghdr *) nl_msg;
                 qDebug() << hdr->nlmsg_type ;//==NLMSG_ERROR ;
                 emit  data(ba);
-                emit  finished();
+                // emit  finished();
             }
         }
         else
