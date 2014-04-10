@@ -4,7 +4,7 @@
 #include <QDebug>
 #include <thread>
 #include <linux/if_ether.h>
-#include "../test_hook/trx_data.h"
+#include "trx_data.h"
 
 class NetlinkSocketPrivate
 {
@@ -118,7 +118,6 @@ void NetlinkSocket::runListener()
                 struct nlmsghdr * hdr = (struct nlmsghdr *) nl_msg;
                 qDebug() << hdr->nlmsg_type ;//==NLMSG_ERROR ;
                 emit  data(ba);
-                // emit  finished();
             }
         }
         else
@@ -139,6 +138,5 @@ void NetlinkSocket::OnReceive(int nErrorCode)
 
 void NetlinkSocket::threadStart(NetlinkSocket *p)
 {
-
    p->runListener();
 }
