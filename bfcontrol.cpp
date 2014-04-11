@@ -14,3 +14,10 @@ void BFControl::onDataArrival(QByteArray ba)
     struct nlmsghdr * hdr = (struct nlmsghdr *) ba.data();
     qDebug() << "onDataArrives" << hdr->nlmsg_type;
 }
+
+
+void BFControl::rdRead()
+{
+//    struct nlmsghdr * hdr = (struct nlmsghdr *) ba.data();
+     qDebug() << "onDataArrives"; // << hdr->nlmsg_type;
+}

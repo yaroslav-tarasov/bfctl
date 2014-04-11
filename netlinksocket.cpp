@@ -6,6 +6,8 @@
 #include <linux/if_ether.h>
 #include "trx_data.h"
 
+
+
 class NetlinkSocketPrivate
 {
 public:

@@ -13,6 +13,7 @@ signals:
     
 public slots:
     void onDataArrival(QByteArray ba);
+    void rdRead();
 };
 
 #endif // BFCONTROL_H
