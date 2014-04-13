@@ -32,6 +32,7 @@ int main(int argc, char *argv[])
 
     std::cout << "Press  any key" << std::endl;
     std::cin.get();
+    pNS->close();
     QTimer::singleShot(10, &a, SLOT(quit()));
     return a.exec();
 }

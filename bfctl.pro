@@ -18,11 +18,13 @@ QMAKE_CXXFLAGS += -std=c++0x
 
 SOURCES += main.cpp \
     #netlinksocket.cpp \
-    bfcontrol.cpp
+    bfcontrol.cpp \
+    utils.cpp
 
 HEADERS += \
     #netlinksocket.h \
-    bfcontrol.h
+    bfcontrol.h \
+    utils.h
 
 INCLUDEPATH += ../bf-ko ../bf-link
 
