@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core
+QT       += core threads
 
 QT       -= gui
 
@@ -17,13 +17,14 @@ TEMPLATE = app
 QMAKE_CXXFLAGS += -std=c++0x
 
 SOURCES += main.cpp \
-    netlinksocket.cpp \
+    #netlinksocket.cpp \
     bfcontrol.cpp
 
 HEADERS += \
-    netlinksocket.h \
+    #netlinksocket.h \
     bfcontrol.h
 
-INCLUDEPATH += /home/tarasov/ko_test
+INCLUDEPATH += ../bf-ko ../bf-link
 
-LIBS += -lnl
+
+LIBS += -L../../lib -lbf-link -lnl
