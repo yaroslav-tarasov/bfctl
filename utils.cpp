@@ -1,7 +1,6 @@
+#include "utils.h"
 
-enum { CMD_NEW_RULE=1,CMD_PRINT_RULES,CMD_DEL_RULE,CMD_PRINT_HELP};
-enum { DIR_ALL,DIR_INPUT,DIR_OUTPUT};
-
+namespace cmd_parse {
 int
 get_proto(char* proto) {
     if (strcmp(proto, "ALL") == 0) {
@@ -178,4 +177,6 @@ parse_cmd_args(int argc, char *argv[],filter_rule_t* td)
 
 
    return command;
+}
+
 }
